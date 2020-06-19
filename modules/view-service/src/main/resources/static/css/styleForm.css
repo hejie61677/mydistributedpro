@@ -1,0 +1,24 @@
+body{
+    text-align: center;
+}
+table tr td{
+    border: 1px solid #d9fff1;
+}
+table{
+    border-collapse: collapse;
+    padding: 2px;
+    text-align: left;
+}
+tr.first{
+    text-align: center;
+    font-size: 15px;
+    background-color: #f7ffea;
+}
+tr.second{
+    text-align: center;
+    font-size: 13px;
+    background-color: #f5eae7;
+}
+td{
+    width: 300px;
+}

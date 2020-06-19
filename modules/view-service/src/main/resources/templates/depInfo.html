@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>机构信息</title>
+    <script src="./js/vue.min.js"></script>
+    <script src="./js/vue-resource.min.js"></script>
+    <script src="webjars/jquery/3.4.1/jquery.min.js"></script>
+    <link type="text/css" rel="styleSheet" href="./css/styleTable.css" />
+</head>
+<body>
+    <div id="app">
+        <table>
+            <tr class="first">
+                <td>机构编码</td>
+                <td>机构名称</td>
+                <td>法人代表</td>
+                <td>电话</td>
+                <td>地址</td>
+            </tr>
+            <template v-for="dep in depList">
+                <tr class="second">
+                    <td>{{dep.cur_dep_no}}</td>
+                    <td>{{dep.dep_name}}</td>
+                    <td>{{dep.dep_manager}}</td>
+                    <td>{{dep.dep_phone}}</td>
+                    <td>{{dep.dep_addr}}</td>
+                </tr>
+            </template>
+        </table>
+    </div>
+
+    <script>
+        var vue = new Vue({
+            el: "#app",
+            data: {
+                depList: []
+            },
+            methods: {
+                getDepList: function () {
+                    this.$http.get("/depList").then(function (value) {
+                        this.depList = value.body;
+                    });
+                },
+                getDepByPage: function () {
+                    this.$http.get("/depList/0/3").then(function (value) {
+                        this.depList = value.body;
+                    });
+
+                }
+            }
+        });
+        vue.getDepByPage();
+    </script>
+</body>
+</html>
