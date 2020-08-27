@@ -11,6 +11,7 @@
     <module>modules/data-service</module>
     <module>modules/view-service</module>
     <module>modules/zuul-server</module>
+    <module>modules/my-module</module>
   </modules>
   <name>myroot</name>
   <url>http://www.hejie.com</url>

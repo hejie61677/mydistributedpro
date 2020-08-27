@@ -1,0 +1,6 @@
+/.idea
+/modules/data-service/target
+/modules/eureka-server/target
+/modules/my-module/target
+/modules/view-service/target
+/modules/zuul-server/target
